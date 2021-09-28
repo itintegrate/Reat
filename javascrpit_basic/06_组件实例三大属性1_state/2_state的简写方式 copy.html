@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>state简写方式</title>
+</head>
+<body>
+	<!-- 准备好一个“容器” -->
+	<div id="test"></div>
+	
+	<!-- 引入react核心库 -->
+	<script type="text/javascript" src="../js/react.development.js"></script>
+	<!-- 引入react-dom，用于支持react操作DOM -->
+	<script type="text/javascript" src="../js/react-dom.development.js"></script>
+	<!-- 引入babel，用于将jsx转为js -->
+	<script type="text/javascript" src="../js/babel.min.js"></script>
+
+	<script type="text/babel">
+		//1.创建组件
+      class Weather extends React.Component{
+		state = {isHot:true}
+		
+		render(){
+			const {isHot} = this.state
+			return <h1 onClick = {this.onCh}>the Weather is {isHot?"Hot":"Cold"}</h1>
+		  }
+
+		onCh = () => {
+			let tem = this.state.isHot
+			this.setState({isHot:!tem})
+		}
+	  }
+
+	  ReactDOM.render(<Weather/>,document.getElementById("test"))
+				
+	</script>
+</body>
+</html>

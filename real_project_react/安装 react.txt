@@ -1,0 +1,25 @@
+安装 react
+npx create-react-app my-app
+
+安装插件
+npm I redux react-redux nanoid redux-devtools-extension redux-thunk antd@3.26.19
+
+开始
+npm start
+
+
+组建 vscode rcc
+
+import React, { Component } from 'react'
+
+export default class App extends Component {
+    render() {
+        return (
+            <div>
+                App...
+            </div>
+        )
+    }
+}
+
+

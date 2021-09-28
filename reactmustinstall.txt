@@ -1,0 +1,1 @@
+redux react-redux nanoid redux-devtools-extension redux-thunk

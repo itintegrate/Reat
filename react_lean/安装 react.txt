@@ -1,0 +1,22 @@
+安装 react
+npx create-react-app my-app
+
+开始
+npm start
+
+
+组建 vscode rcc
+
+import React, { Component } from 'react'
+
+export default class App extends Component {
+    render() {
+        return (
+            <div>
+                App...
+            </div>
+        )
+    }
+}
+
+

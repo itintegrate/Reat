@@ -1,0 +1,46 @@
+# 先 fork 项目到自己 github
+# 1. 从自己仓库克隆到本地(clone 的是项目指定的默认分支，比如 master)
+git clone git@github.com:me/em.git
+# 2.1 查看本地分支
+git branch
+>>> * master
+# 2.2 发现不是自己要开发的 (比如 dev) 分支，先查看本地和远程所有分支
+git branch -a
+>>> * master
+>>> remotes/origin/HEAD -> origin/master
+>>> remotes/origin/dev
+>>> remotes/origin/master
+# 2.2 创建一个dev分支（-b），并把远程dev分支（origin/dev）的内容放在该分支内。接着切换到该分支（checkout）
+git checkout -b dev origin/dev
+# 在remote 里 加上 dev
+git push -u origin dev
+
+# 如果想切回 master 分支
+git checkout master
+
+
+# 3. 和团队项目保持同步
+# 3.1 查看有没有设置upstream(看返回里有没有 upstream)
+# upstream(上游) 不是关键字，而是大家通用的远程仓库的别名
+git remote -v
+# 3.2 没有的话先添加团队项目地址
+git remote add upstream 团队项目地址 like: https://github.com/itintegrate/itintegrate.git
+# 3.3 获取团队项目最新版本
+git fetch upstream
+# 3.4 合并到本地
+git merge upstream/dev
+# 省事的话可以直接用 pull(pull = fetch + merge) 
+git pull upstream/dev
+
+# 4. push修改到自己的项目上
+# 4.1 工作完成后，先 add 和 commit 提交更新到本地仓库，push 前先pull一下团队项目最新的代码(预防工作期间有人修改导致代码冲突)
+git add .
+git commit -m "fix bug" # 首次会提示配置邮箱与用户名，生成到 ~/.gitconfig 文件中
+git pull upstream/dev
+# 4.2. 推送到(自己的)远程仓库
+git push 
+# 如果分支名不一致，需要指定 push 到哪个分支
+git push origin HEAD:dev
+
+# 5. 登录 Github，进入 Fork 的仓库，点击 new Pull request 请求合并到团队项目
+# 6. 团队负责人 review 通过后， 点击 Merge pull request 合并到团队项目
