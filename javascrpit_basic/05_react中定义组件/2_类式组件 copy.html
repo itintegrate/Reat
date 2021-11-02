@@ -16,18 +16,38 @@
 	<script type="text/javascript" src="../js/babel.min.js"></script>
 
 	<script type="text/babel">
-	class Bbb extends React.Component{
-
-		render(){
-			console.log(this)
-			return (
-				<h1>xixixixixi</h1>
-			)
-		}
-
+	
+	
+	function AA (){
+		const data = [1,2,3,4]
+		return(
+			<div>
+			{
+				data.map((item,index)=>{
+					return <li key={index}>{item}</li>
+				})
+			}
+			</div>
+		)
 	}
 
-	ReactDOM.render(<Bbb/>, document.getElementById("test"))
+	class BB extends React.Component{
+		render(){
+			const data2 = [7,8,9,10]
+			return(
+				<ul>
+					{
+						data2.map((item,index)=>{
+							return <li key={index}>{item}</li>
+						})
+					}
+				</ul>
+			)
+
+		}
+	}
+
+	ReactDOM.render(<AA />,document.getElementById("test"))
 
 	</script>
 </body>

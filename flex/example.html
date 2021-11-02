@@ -1,0 +1,250 @@
+<html>
+    <head>
+<style>
+
+
+/*父*/
+        /* flex-dirction 轴的方向 */
+        
+
+        /* flex-direction: row;   从右到左*/
+        /* flex-direction: row-reverse; 从左到右 */
+        /* flex-direction: column; 从上到下 */
+        /* flex-direction: column-reverse; 从下到上 */
+
+        /* justify-content 是设置主轴上元素的排列方法 */
+
+
+        /* justify-content: flex-start; 从左到右 */
+        /* justify-content: flex-end; 从左到右 */
+        /* justify-content: center; 居中 */
+        /* justify-content: space-around; 平分 */
+        /* justify-content: space-between; 左右靠边 平分 */
+
+        /*flex-wrap 换行。 默认不换行 */
+        /* flex-wrap: nowrap; 不换行 */
+        /* flex-wrap: wrap; 换行 */
+
+        /* align-items; 测轴 单行使用*/
+
+      /*  align-items: flex-start; 侧轴 从上倒下 或从左到右
+        align-items: flex-end;  侧轴 从下倒上 或从右到左
+        align-items: center;    侧轴  中间位
+        align-items: stretch;   侧轴 延伸
+         */
+
+         /*align-content; 侧轴 多行试用 flex-wrap: wrap;*/
+         
+/*       align-content: flex-start;
+         align-content: flex-end;
+         align-content: center;
+         align-content: stretch;
+         align-content: space-around;
+         align-content: space-between;*/
+
+
+         /*flex-flow  就是flex-direction 和 flex-warp*/
+
+         /*flex-flow: row wrap;*/
+
+/*子*/
+
+/*flex 加上 数字 1，2，3 平分空余空间*/
+
+/*align-self 可以 独自移动*/
+
+/*order 排列顺序 小最前*/
+
+body{    
+    width: 60%;
+    min-height: 700px;
+    margin: 0 auto;
+}
+
+.top-banner{
+    display: flex;
+    flex: 1;
+    height: 100px;
+    background: red;
+}
+.section1{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+}
+.section1 div{
+    flex: 1;
+    text-align: center;
+    margin: 1px;
+}
+
+.section1-1{
+    height: 20px;
+    background: #DC7633;
+}
+.section1-2{
+    height: 20px;
+    background: #EB984E;
+}
+.section1-3{
+    height: 20px;
+    background: #82E0AA;
+}
+.section1-4{
+    height: 20px;
+    background: #5DADE2;
+}
+.section1-5{
+    height: 20px;
+    background: #A569BD;    
+}
+
+.section2{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.section2-1{
+    flex: 1;
+    height: 100px;
+    margin: 1px;
+    background: #A569BD;
+
+}
+.section2-2{
+    display: flex;
+    flex-flow: column wrap;
+    flex: 1;
+    height: 100px;
+    margin: 1px;
+    background: #5DADE2;
+
+}
+
+.section2-2 div{
+    flex: 1;
+    margin: 1px;
+}
+
+.section2-2-1{
+    background:#BCAAA4
+}
+
+.section2-2-2{
+   background: #AED581; 
+}
+.section2-3{
+    display: flex;
+    flex-flow: column wrap;
+    flex: 1;
+    height: 100px;
+    margin: 1px;
+    background: #82E0AA;
+}
+
+.section2-3 div{
+    flex: 1;
+    margin: 1px;
+}
+
+.section2-3-2{
+    background:#BCAAA4
+}
+
+.section2-3-1{
+   background: #AED581; 
+}
+.section5{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: red;
+    align-content: space-around;
+
+}
+.section5 div{
+        flex: 20%;
+
+        }
+
+.section5-1{background:#CCFF00}
+.section5-2{background:#CCCCFF}
+.section5-3{background:#CC33FF}
+.section5-4{background:#6600FF}
+.section5-5{background:#BCAAA4}
+.section5-6{background:#6666FF}
+.section5-7{background:#99FFFF}
+.section5-8{background:#00CCFF}
+.section5-9{background:#0099FF}
+.section5-0{background:#330099}
+
+
+</style>
+    </head>
+
+    <body>
+        <div class="top-banner"></div>
+        <div class="section1">
+            <div class="section1-1">section1-1</div>
+            <div class="section1-2">section1-2</div>
+            <div class="section1-3">section1-3</div>
+            <div class="section1-4">section1-4</div>
+            <div class="section1-5">section1-5</div>
+        </div>
+
+        <div class="section2">
+            <div class="section2-1">section2-1</div>
+            <div class="section2-2">
+                <div class="section2-2-1">section2-2-1</div>
+                <div class="section2-2-2">section2-2-2</div>
+            </div>
+            <div class="section2-3">
+                <div class="section2-3-1">section2-3-1</div>
+                <div class="section2-3-2">section2-3-2</div>
+            </div>
+        </div>
+
+        <div class="section2">
+            <div class="section2-1">section3-1</div>
+            <div class="section2-2">
+                <div class="section3-2-1">section3-2-1</div>
+                <div class="section3-2-2">section3-2-2</div>
+            </div>
+            <div class="section2-3">
+                <div class="section3-3-1">section3-3-1</div>
+                <div class="section3-3-2">section3-3-2</div>
+            </div>
+        </div>
+
+        <div class="section2">
+            <div class="section2-1">section4-1</div>
+            <div class="section2-2">
+                <div class="section4-2-1">section4-2-1</div>
+                <div class="section4-2-2">section4-2-2</div>
+            </div>
+            <div class="section2-3">
+                <div class="section4-3-1">section4-3-1</div>
+                <div class="section4-3-2">section4-3-2</div>
+            </div>
+        </div>
+
+        <div class="section5">
+            <div class="section5-1">section5-1</div>
+            <div class="section5-2">section5-2</div>
+            <div class="section5-3">section5-3</div>
+            <div class="section5-4">section5-4</div>
+            <div class="section5-5">section5-5</div>
+            <div class="section5-6">section5-6</div>
+            <div class="section5-7">section5-7</div>
+            <div class="section5-8">section5-8</div>
+            <div class="section5-9">section5-9</div>
+            <div class="section5-0">section5-0</div>
+
+        </div>
+
+
+
+    </body>
+</html>

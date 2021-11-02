@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>高阶函数_函数柯里化</title>
+</head>
+<body>
+	<!-- 准备好一个“容器” -->
+	<div id="test"></div>
+	
+	<!-- 引入react核心库 -->
+	<script type="text/javascript" src="../js/react.development.js"></script>
+	<!-- 引入react-dom，用于支持react操作DOM -->
+	<script type="text/javascript" src="../js/react-dom.development.js"></script>
+	<!-- 引入babel，用于将jsx转为js -->
+	<script type="text/javascript" src="../js/babel.min.js"></script>
+
+	<script type="text/babel">
+
+		class BB extends React.Component{
+
+			state = {username:"",password:""}
+
+			saveData = (v) =>{
+
+				return (e)=>{
+
+					this.setState({[v]:e.target.value})
+ 				}
+			}
+
+			one = (e,txt) =>{
+				e.preventDefault()
+				const {username,password} = this.state
+				alert(`${txt} the name is : ${username} and the password is ${password}`)
+			} 
+
+			render(){
+				return(
+					<form onSubmit={e => this.one(e,"hello world")}>
+						<label>username</label>
+						<input onChange={this.saveData("username")}/>
+						<label>password</label>
+						<input onChange={this.saveData("password")}/>
+						<button>login</button>
+					</form>
+				)
+			}
+
+
+		}
+
+		ReactDOM.render(<BB />,document.getElementById("test"))
+
+	</script>
+</body>
+</html>

@@ -35,21 +35,18 @@
 		//模拟一些数据
 		const data = ['Angular','React','Vue']
 		//1.创建虚拟DOM
-		const dom = (
-			<ul>
+
+		const VDom = (
+			<ul>			
 			{
-					data.map(
-						(item,index)=>{
-					return <li key={index}>{item}</li>
-				}
-				)
+				data.map((item,index) => {
+					return <li key={index}>item</li>
+				})
 			}
 			</ul>
-
 		)
-		ReactDOM.render(dom,document.getElementById('test'))
 
-
+		ReactDOM.render(VDom,document.getElementById('test'))
 		
 	</script>
 </body>

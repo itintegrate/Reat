@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件处理</title>
+</head>
+<body>
+	<!-- 准备好一个“容器” -->
+	<div id="test"></div>
+	
+	<!-- 引入react核心库 -->
+	<script type="text/javascript" src="../js/react.development.js"></script>
+	<!-- 引入react-dom，用于支持react操作DOM -->
+	<script type="text/javascript" src="../js/react-dom.development.js"></script>
+	<!-- 引入babel，用于将jsx转为js -->
+	<script type="text/javascript" src="../js/babel.min.js"></script>
+
+	<script type="text/babel">
+		class AA extends React.Component{
+
+			one = () =>{
+				alert(this.inputValue.value)
+			}
+			two = (e) =>{
+				alert(e.target.value)
+			}
+
+			render(){
+				return(
+					<div>
+						<input ref={v => this.inputValue = v}/>
+						<button onClick={this.one}>click show left</button>
+						<input onBlur={this.two}/>	
+					</div>
+				)
+			}
+		}
+		ReactDOM.render(<AA />,document.getElementById("test"))
+	</script>
+</body>
+</html>

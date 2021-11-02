@@ -19,21 +19,22 @@
 
 	<script type="text/babel">
 		//创建组件
-		class Person extends React.Component{
+		class Propa extends React.Component{
 			render(){
-				const {name,sex,age} = this.props
-				return(
-				<ul>
-				<li>Name: {name}</li>
-				<li>Sex: {sex}</li>
-				<li>Age: {age}</li>
-				</ul>
-				)
-				
+				console.log(this.props)
+				const data1 = this.props.data
+				return(<div>
+						<ul>
+							<li>{data1.name}</li>
+							<li>{data1.id}</li>
+							<li>{data1.sex}</li>
+						</ul>
+					</div>)
 			}
 		}
-		const p = {name:"jin",sex:"Man",age:33}
-		ReactDOM.render(<Person {...p}/>,document.getElementById("test1"))
+
+		const p = {id:1,name:"jin",sex:"man"}
+		ReactDOM.render(<Propa data={p}/>,document.getElementById("test1"))
 	</script>
 </body>
 </html>

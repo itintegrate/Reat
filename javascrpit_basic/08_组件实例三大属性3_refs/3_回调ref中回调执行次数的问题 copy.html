@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3_回调ref中回调执行次数的问题</title>
+</head>
+<body>
+	<!-- 准备好一个“容器” -->
+	<div id="test"></div>
+	
+	<!-- 引入react核心库 -->
+	<script type="text/javascript" src="../js/react.development.js"></script>
+	<!-- 引入react-dom，用于支持react操作DOM -->
+	<script type="text/javascript" src="../js/react-dom.development.js"></script>
+	<!-- 引入babel，用于将jsx转为js -->
+	<script type="text/javascript" src="../js/babel.min.js"></script>
+
+	<script type="text/babel">
+		//创建组件
+		class Wtest extends React.Component{
+			state = {isHot:true}
+
+			one = () =>{
+				console.log(this.inputv.value)
+				alert(this.inputv.value)
+			}
+
+			two = ()=>{
+				const {isHot} = this.state
+				this.setState({isHot:!isHot})
+			}
+
+			render(){
+				const {isHot} = this.state
+				return(
+					<div>
+					<h1>Wether is {isHot?"Hot":"Cold"}</h1>
+					<input ref={v => this.inputv = v}/>
+					<button onClick={this.one}>1</button>
+					<button onClick={this.two}>2</button>
+					</div>
+				)
+			}
+
+		}
+
+		ReactDOM.render(<Wtest />,document.getElementById("test"))
+	</script>
+</body>
+</html>

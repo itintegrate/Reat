@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2_受控组件</title>
+</head>
+<body>
+	<!-- 准备好一个“容器” -->
+	<div id="test"></div>
+	
+	<!-- 引入react核心库 -->
+	<script type="text/javascript" src="../js/react.development.js"></script>
+	<!-- 引入react-dom，用于支持react操作DOM -->
+	<script type="text/javascript" src="../js/react-dom.development.js"></script>
+	<!-- 引入babel，用于将jsx转为js -->
+	<script type="text/javascript" src="../js/babel.min.js"></script>
+
+	<script type="text/babel">
+		class AA extends React.Component{
+
+			state = {username:"",
+					 password:""}
+
+		    one = (e)=>{
+		    	this.setState({username:e.target.value})
+		    }
+		    two = (e)=>{
+		    	this.setState({password:e.target.value})
+		    }
+		    three = (e)=>{
+		    	const {username, password} = this.state
+		    	e.preventDefault()
+		    	alert(`username is ${username} and password is ${password}`)
+		    }
+
+			render(){
+				return(
+					<form onSubmit = {this.three}>
+						<label>name</label>
+						<input onChange={this.one}/>
+						<label>password</label>
+						<input onChange={this.two}/>
+						<button>login</button>
+					</form>
+				)
+			}
+		}
+
+		ReactDOM.render(<AA />,document.getElementById("test"))
+	</script>
+</body>
+</html>
